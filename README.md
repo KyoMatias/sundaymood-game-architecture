@@ -46,7 +46,7 @@ The architecture follows a **feature-driven, modular approach**, where each game
 [Inside Unity's Explorer Visualized]
 -ASSETS-
 
-[Docs] [Features] [Utilities] [Art] [Audio] [UI] [Scenes] [Animations] [Shaders] [Fonts] [Plugins] [ThirdParty] [Editor] [Resources] [StreamingAssets] [Addressable] 
+[Docs] [Features] [Utility] [Art] [Audio] [UI] [Scenes] [Animations] [Shaders] [Fonts] [Plugins] [ThirdParty] [Editor] [Resources] [StreamingAssets] [Addressable] 
 
 
 Assets/
@@ -74,7 +74,7 @@ Assets/
 │ ├─ Levels/
 │ └─ DEBUGS/ <- IMPORTANT: ALL DEBUG COMPONENTS (SCRIPTS, PREFABS, CLASSES, ETC) GO HERE!
 │
-├─ Utilities/ # Cross-feature reusable systems
+├─ Utility/ # Cross-feature reusable systems
 │ ├─ Core/ # Low-level services and managers
 │ │ ├─ Services/
 │ │ ├─ Managers/

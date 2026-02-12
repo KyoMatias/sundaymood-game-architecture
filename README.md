@@ -1,2 +1,203 @@
-# sundaymood-game-architecture
-Project Structure Guide for all of my games (Use as reference for both viewer and owner)
+# Kyoko/Sundaymood Studios | Unity Project Architecture Guide
+
+[Skip to Project Architecture](#project-architecture)
+
+**Welcome.**
+
+My name is **Kyo**, also known as **Kyoko** on GitHub, and this repository serves as my **personal and studio-level project architecture guide** for Unity-based development.
+
+This guide documents the **structural standards, conventions, and organizational principles** I follow across my projects—whether they are public repositories, private collaborations, or internal prototypes. Its goal is to help reviewers, collaborators, and future contributors quickly understand how my projects are structured, how systems are grouped, and why certain architectural decisions were made.
+
+**Note:** *This guide was heavily inspired and ideated from [Zsfer's Unity-Style-Guide](https://github.com/zsfer/unity-style-guide). Do check his guide out for more deeper details on the standard conventions.*
+
+---
+
+### Background & Intent
+
+I have been programming in **C# and Unity since 2020**, with prior experience in **Unreal Engine 4** before transitioning fully into Unity. While this guide is published and maintained as a formal reference, I consider myself an **intermediate developer**—continually learning, refining, and improving with each project.
+
+This document is not presented as a “perfect” or universal solution. Instead, it reflects a **deliberate, evolving standard** shaped by practical experience, iteration, and long-term maintainability concerns. Think of this repository as my **project and coding bible**:  
+a living guide that defines how I structure my work today, and how future projects under **Sundaymood Studios** are expected to follow.
+
+All new projects will adhere to this architecture.  
+Older projects may be gradually refactored to align with it where appropriate.
+
+---
+
+## Table of Contents
+
+1. [Introduction](#kyokosundaymood-studios--unity-project-architecture-guide)
+2. [Background & Intent](#background--intent)
+3. [Project Architecture](#project-architecture)
+4. [Code Commandments](#code-commandments)
+5. [Script Samples](#script-samples)
+6. [Notes & Future Revisions](#notes--future-revisions)
+
+---
+
+## Project Architecture
+
+This section outlines the **standard Unity project structure** used across all Sundaymood Studios projects.  
+The architecture follows a **feature-driven, modular approach**, where each gameplay or system feature is treated as a self-contained unit, while shared systems are centralized and reused responsibly.
+
+---
+```
+Assets/
+├─ Docs/ # Documentations and text files.
+│ ├─ CHECKLIST.md
+│ ├─ Conventions.md
+│ └─ FeatureDesign/
+│
+├─ Features/ # Primary feature modules (self-contained)
+│ ├─ FeatureName/
+│ │ ├─ Scripts/ # Feature-only runtime code
+│ │ ├─ Data/ # ScriptableObject instances
+│ │ ├─ Prefabs/ # Feature-specific prefabs
+│ │ ├─ Scenes/ # Scenes tied to this feature
+│ │ ├─ Art/ # Feature-specific art assets
+│ │ ├─ Audio/ # Feature-specific audio
+│ │ ├─ UI/ # Feature-specific UI
+│ │ ├─ Editor/ # Feature-specific editor tools
+│ │ └─ Tests/ # Feature-level tests
+│ │  #Examples of features in actual projects.
+│ ├─ Player/
+│ ├─ Enemy/
+│ ├─ UISystem/
+│ ├─ Progression/
+│ ├─ Levels/
+│ └─ DEBUGS/ <- IMPORTANT: ALL DEBUG COMPONENTS (SCRIPTS, PREFABS, CLASSES, ETC) GO HERE!
+│
+├─ Utilities/ # Cross-feature reusable systems
+│ ├─ Core/ # Low-level services and managers
+│ │ ├─ Services/
+│ │ ├─ Managers/
+│ │ ├─ Patterns/
+│ │ └─ Extensions/
+│ │
+│ ├─ Systems/ # Global systems (Localization, Analytics, etc.)
+│ ├─ ScriptableObjects/ # Reusable ScriptableObject definitions
+│ ├─ Prefabs/ # Generic prefabs used across features
+│ └─ UI/ # Shared UI components
+│
+├─ Art/ # Centralized raw art assets
+├─ Audio/ # Global audio assets
+├─ UI/ # Global UI screens
+├─ Scenes/ # Project-level scenes
+│ ├─ Bootstrap.unity
+│ ├─ MainMenu.unity
+│ └─ Persistent/
+│
+├─ Animation/
+├─ Shaders/
+├─ Fonts/
+├─ Plugins/
+├─ ThirdParty/
+├─ Editor/ # Project-wide editor tooling
+├─ Resources/ # Extremely limited use
+├─ StreamingAssets/
+├─ AddressableAssetsData/
+├─ Builds/
+├─ Tests/
+│ ├─ Editor/
+│ └─ Playmode/
+└─
+```
+---
+## Developer Preferences
+
+The points below summarize several **personal preferences and habits** I commonly follow when developing projects. 
+These are not enforced rules, but practical choices that help me stay consistent, organized, and productive.
+They are listed in no particular order and may change as tools, experience, and project needs evolve.
+
+
+### File Headers
+![Header Screenshot Example](https://files.catbox.moe/urjg01.png) 
+
+**I personally love file headers as it gives me and other programmers an idea what a script or file does.**
+I have also attached a template below that you could paste in your MonoBehaviourScriptTemplate.txt
+
+```
+/* =============================================================================
+   Project:        #PROJECTNAME#
+   File:           #SCRIPTNAME#.cs
+   Author:         [Insert Author Name]
+   Studio:         [Studio Name]
+   Engine:         Unity [Version]
+   Created:        #CREATIONDATE#
+    ---------------------------------------------------------------------------
+    Description:
+    [Briefly describe the responsibility of this component.]
+    ---------------------------------------------------------------------------
+    Notes:
+    ---------------------------------------------------------------------------
+    - Part of the [Game Title] project by [Studio].
+    - Redistribution should credit the author and studio. ([Author Name])
+    
+    [Add additional notes here]
+   ========================================================================== */
+
+using Systems;
+using UnityEngine;
+
+//Uncomment namespace and brackets.
+//namespace 
+//{
+    public class #SCRIPTNAME# : MonoBehaviour
+    {
+        #region Unity Lifecycle - Core
+
+        private void Awake()
+        {
+            // Called when the script instance is being loaded.
+        }
+
+        private void OnEnable()
+        {
+            // Called when the object becomes enabled and active.
+        }
+
+        private void Start()
+        {
+            // Called before the first frame update.
+        }
+
+        private void Update()
+        {
+            // Called once per frame.
+        }
+
+        private void OnDisable()
+        {
+            // Called when the behaviour becomes disabled.
+        }
+
+        #endregion
+
+
+        #region Unity Lifecycle - Extended
+
+        private void FixedUpdate()
+        {
+            // Called at a fixed interval for physics updates.
+        }
+
+        private void LateUpdate()
+        {
+            // Called after all Update functions have been called.
+        }
+
+        private void OnValidate()
+        {
+            // Called in the Editor when values are changed.
+        }
+
+        #endregion
+    }
+//}
+
+---
+## Code Commandments
+
+I
+
+

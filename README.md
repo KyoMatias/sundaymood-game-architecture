@@ -42,6 +42,12 @@ The architecture follows a **feature-driven, modular approach**, where each game
 
 ---
 ```
+[Inside Unity's Explorer Visualized]
+-ASSETS-
+
+[Docs] [Features] [Utilities] [Art] [Audio] [UI] [Scenes] [Animations] [Shaders] [Fonts] [Plugins] [ThirdParty] [Editor] [Resources] [StreamingAssets] [Addressable] 
+
+
 Assets/
 ├─ Docs/ # Documentations and text files.
 │ ├─ CHECKLIST.md
@@ -95,7 +101,7 @@ Assets/
 ├─ Editor/ # Project-wide editor tooling
 ├─ Resources/ # Extremely limited use
 ├─ StreamingAssets/
-├─ AddressableAssetsData/
+├─ Addressable/
 ├─ Builds/
 ├─ Tests/
 │ ├─ Editor/

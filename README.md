@@ -8,7 +8,8 @@ My name is **Kyo**, also known as **Kyoko** on GitHub, and this repository serve
 
 This guide documents the **structural standards, conventions, and organizational principles** I follow across my projects—whether they are public repositories, private collaborations, or internal prototypes. Its goal is to help reviewers, collaborators, and future contributors quickly understand how my projects are structured, how systems are grouped, and why certain architectural decisions were made.
 
-**Note:** *This guide was heavily inspired and ideated from [Zsfer's Unity-Style-Guide](https://github.com/zsfer/unity-style-guide). Do check his guide out for more deeper details on the standard conventions.*
+- **Note:** This guide is heavily inspired by [Zsfer’s Unity Style Guide](https://github.com/zsfer/unity-style-guide).  
+  If you’re looking for deeper or more comprehensive convention details, I highly recommend checking it out.
 
 ---
 
@@ -119,8 +120,8 @@ They are listed in no particular order and may change as tools, experience, and 
 ### File Headers
 ![Header Screenshot Example](https://files.catbox.moe/urjg01.png) 
 
-**I personally love file headers as it gives me and other programmers an idea what a script or file does.**
-I have also attached a template below that you could paste in your MonoBehaviourScriptTemplate.txt
+- I prefer using **file header comments** to clearly describe what a script is responsible for. This helps both myself and other developers quickly understand a file at a glance.  
+  A reusable template is provided below and can be placed directly into `MonoBehaviourScriptTemplate.txt`.
 
 ```
 /* =============================================================================
@@ -200,7 +201,12 @@ using UnityEngine;
         #endregion
     }
 //}
+```
 
+### Inspector Headers 
+![Unity Header Screenshot Example](https://files.catbox.moe/6a3nft.png) 
+
+I frequently use **headers** to organize scripts and keep the Inspector clean and easy to navigate.
 ---
 ## Code Commandments
 

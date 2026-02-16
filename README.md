@@ -210,6 +210,17 @@ I frequently use **headers** to organize scripts and keep the Inspector clean an
 ---
 ## Code Commandments
 
-I
+1. Public, _private, internal.
+2. SOLID Principles
+3. DRY
+4. KISS
+[LEGACY Code] - Prefix based on features
+-  Game - G
+  = GManager, GEvents, GTimer
+- Vehicle - V
+  = VWheel, VTransmission, VEngine
+
+5. Base on Legacy code from old games
+6. C++ style Code.
 
 

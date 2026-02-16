@@ -142,71 +142,12 @@ They are listed in no particular order and may change as tools, experience, and 
     
     [Add additional notes here]
    ========================================================================== */
-
-using Systems;
-using UnityEngine;
-
-//Uncomment namespace and brackets.
-//namespace 
-//{
-    public class #SCRIPTNAME# : MonoBehaviour
-    {
-        #region Unity Lifecycle - Core
-
-        private void Awake()
-        {
-            // Called when the script instance is being loaded.
-        }
-
-        private void OnEnable()
-        {
-            // Called when the object becomes enabled and active.
-        }
-
-        private void Start()
-        {
-            // Called before the first frame update.
-        }
-
-        private void Update()
-        {
-            // Called once per frame.
-        }
-
-        private void OnDisable()
-        {
-            // Called when the behaviour becomes disabled.
-        }
-
-        #endregion
-
-
-        #region Unity Lifecycle - Extended
-
-        private void FixedUpdate()
-        {
-            // Called at a fixed interval for physics updates.
-        }
-
-        private void LateUpdate()
-        {
-            // Called after all Update functions have been called.
-        }
-
-        private void OnValidate()
-        {
-            // Called in the Editor when values are changed.
-        }
-
-        #endregion
-    }
-//}
 ```
 
 ### Inspector Headers 
 ![Unity Header Screenshot Example](https://files.catbox.moe/6a3nft.png) 
 
-I frequently use **headers** to organize scripts and keep the Inspector clean and easy to navigate.
+I frequently use **Headers** to organize scripts and keep the Inspector clean and easy to navigate.
 ---
 ## Code Commandments
 

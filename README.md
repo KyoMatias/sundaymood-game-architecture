@@ -149,7 +149,7 @@ They are listed in no particular order and may change as tools, experience, and 
 
 I frequently use **Headers** to organize scripts and keep the Inspector clean and easy to navigate.
 ---
-## Code Commandments
+## Code Commandments [WORK IN PROGRESS - NOT FINAL (A LOT OF TERRIBLE STANDARDS]
 
 1. Public, _private, internal.
 2. SOLID Principles

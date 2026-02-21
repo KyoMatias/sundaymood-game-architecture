@@ -153,15 +153,16 @@ I frequently use **Headers** to organize scripts and keep the Inspector clean an
 
 1. Public, _private, internal.
 2. SOLID Principles
-3. DRY
-4. KISS
+3. DRY (Don't Repeat Yourself)
+4. KISS (Keep It Simple Stupid)
 [LEGACY Code] - Prefix based on features
 -  Game - G
   = GManager, GEvents, GTimer
 - Vehicle - V
   = VWheel, VTransmission, VEngine
+// These are only visible on old projects and may be removed in future code
 
-5. Base on Legacy code from old games
+5. Base on Legacy code from old games (Particulary EA and MC)
 6. C++ style Code.
 
 

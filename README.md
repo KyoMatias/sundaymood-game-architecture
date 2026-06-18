@@ -60,7 +60,6 @@ Assets/
 │ │ ├─ Scripts/ # Feature-only runtime code
 │ │ ├─ Data/ # ScriptableObject instances
 │ │ ├─ Prefabs/ # Feature-specific prefabs
-│ │ ├─ Scenes/ # Scenes tied to this feature
 │ │ ├─ Art/ # Feature-specific art assets
 │ │ ├─ Audio/ # Feature-specific audio
 │ │ ├─ UI/ # Feature-specific UI
@@ -72,6 +71,7 @@ Assets/
 │ ├─ UISystem/
 │ ├─ Progression/
 │ ├─ Levels/
+│ ├─ Scenes/ # Scenes tied to this feature
 │ └─ DEBUGS/ <- IMPORTANT: ALL DEBUG COMPONENTS (SCRIPTS, PREFABS, CLASSES, ETC) GO HERE!
 │
 ├─ Utility/ # Cross-feature reusable systems
